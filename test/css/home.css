@@ -1,0 +1,84 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body,html{
+    margin:0;
+    padding: 0;
+    font-style: '微软雅黑',Microsoft YaHei,Tahoma,'黑体','宋体';
+    color: #333;
+}
+a,a:active,a:visited,a:link{
+    color: #333;
+}
+
+/*导航*/
+.app-nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.ac-time{
+    transition:all 1s ease 0s;
+    -moz-transition:all 1s ease 0s; /* Firefox 4 */
+    -webkit-transition:all 1s ease 0s; /* Safari and Chrome */
+    -o-transition:all 1s ease 0s; /* Opera */
+    -ms-transition:all 1s ease 0s;
+}
+
+.menu-icon-box{
+    display: block;
+    width: 47px;
+    height: 47px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    /*background: red;
+    opacity: 0.5*/
+}
+.menu-icon{
+    width: 18px;
+    height: 1px;
+    line-height: 1px;
+    display: block;
+    position: absolute;
+    left: 15px;
+    background: #000;
+}
+
+.menu-icon.l1{
+    top: 20px;
+}
+.menu-icon.l2{
+    top: 26px;
+}
+
+.app-nav:hover:hover .menu-icon-box.b1{
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);       /* IE 9 */
+    -webkit-transform: rotate(135deg);   /* Safari and Chrome */
+    -o-transform: rotate(135deg);        /* Opera */
+    -moz-transform: rotate(135deg);      /* Firefox */
+}
+.app-nav:hover:hover .menu-icon-box.b1 .menu-icon.l1{
+    transform: translate(0px,3px);
+    -ms-transform: translate(0px,3px);       /* IE 9 */
+    -webkit-transform: translate(0px,3px);   /* Safari and Chrome */
+    -o-transform: translate(0px,3px);        /* Opera */
+    -moz-transform: translate(0px,3px);      /* Firefox */
+}
+.app-nav:hover:hover .menu-icon-box.b2{
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);       /* IE 9 */
+    -webkit-transform: rotate(45deg);   /* Safari and Chrome */
+    -o-transform: rotate(45deg);        /* Opera */
+    -moz-transform: rotate(45deg);      /* Firefox */
+}
+.app-nav:hover:hover .menu-icon-box.b2 .menu-icon.l2{
+    transform: translate(0px,-3px);
+    -ms-transform: translate(0px,-3px);       /* IE 9 */
+    -webkit-transform: translate(0px,-3px);   /* Safari and Chrome */
+    -o-transform: translate(0px,-3px);        /* Opera */
+    -moz-transform: translate(0px,-3px);      /* Firefox */
+}
