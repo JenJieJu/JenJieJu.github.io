@@ -21,10 +21,15 @@ module.exports = function (grunt) {
 
         //jshint检查js 插件的配置信息
         jshint: {
-            build: [ 'Gruntfile.js','src/*.js' ],
+            build: [ 'Gruntfile.js' ],
             options: {
                 jshintrc: '.jshintrc'
             }
+        },
+
+        //jqlint检查jq 插件的配置信息
+        jqlint: {
+            build: [ 'app/js/**/*.js' ]
         },
 
         //concat 合并js css 插件配置信息
@@ -37,26 +42,167 @@ module.exports = function (grunt) {
                 src: ['src/*.css'],
                 dest: 'dest/css/all.css'
             }
-        }
+        },
 
+        //copy 复制文件 插件配置信息 cwd:排除复制的路径 flatten:是否去除路径
+        copy: {
+            js_components: {
+                expand: true,
+                cwd: 'bower_components/',
+                src: ['*/dest/*.min.js'],
+                dest: 'app/js/components/',
+                flatten: true,
+            },
+            css_components: {
+                expand: true,
+                cwd: 'bower_components/',
+                src: ['**/*.min.css'],
+                dest: 'app/css/components/',
+                flatten: true,
+            },
+            js: {
+                expand: true,
+                cwd: 'app/',
+                src: ['js/**/*.js'],
+                dest: 'test/'
+            },
+            css: {
+                expand: true,
+                dot: true,
+                cwd: 'app/',
+                src: ['css/**/*.css'],
+                dest: 'test/'
+            },
+            html: {
+                expand: true,
+                cwd: 'app/',
+                src: ['**/*.html'],
+                dest: 'test/'
+            },
+            json: {
+                expand: true,
+                cwd: 'app/',
+                src: ['**/*.json'],
+                dest: 'test/'
+            },
+            all:{
+                expand: true,
+                cwd: 'app/',
+                src: ['**/*'],
+                dest: 'test/'
+            }
+        },
+
+        //clean 清除文件 插件配置信息
+        clean: {
+            test: {
+                src: ['test/*/**','test/*.html']
+            }
+        },
+
+        //wiredep 自动引入bower依赖的脚本 插件配置信息
+        wiredep: {
+            app: {
+                src: [
+                    'app/index.html'
+                ],
+                ignorePath: /^(\.\.\/)*\.\./,
+                Options: {
+                    // cwd: ['app/js/**/*.js']
+                }
+            }
+        },
+
+        //sails-linker 自动引入js css 插件配置信息
+        'sails-linker': {
+            js: {
+                options: {
+                    startTag: '<!--SCRIPTS-->',
+                    endTag: '<!--SCRIPTS END-->',
+                    fileTmpl: '<script type="text/javascript" src="%s"></script>',
+                    appRoot: 'app/'
+                },
+                files: {
+                    'app/*.html': ['app/js/**/*.js']
+                }
+            },
+            css: {
+                options: {
+                    startTag: '<!--CSS-->',
+                    endTag: '<!--CSS END-->',
+                    fileTmpl: '<link rel="stylesheet" type="text/css" href="%s"></script>',
+                    appRoot: 'app/'
+                },
+                files: {
+                    'app/*.html': ['app/css/**/*.css']
+                }
+            } 
+        },
+
+        //watch 监听文件改变保存后 执行tasks
+        watch: {
+            html: {
+                files: ['app/**/*.html'],
+                //tasks: ['newer:copy:html'],
+                options:{
+                    livereload:true
+                }
+            },
+            css: {
+                files: ['app/css/**/*.css'],
+                tasks: ['newer:copy:css'],
+                options:{
+                    livereload:true
+                }
+            },
+            js: {
+                files: ['app/js/**/*.js'],
+                tasks: ['newer:copy:js'],
+                options:{
+                    livereload:true
+                }
+            },
+            json: {
+                files: ['app/json/**/*.json'],
+                tasks: ['newer:copy:json'],
+                options:{
+                    livereload:true
+                }
+            }
+        },
+
+        //watch 监听文件改变保存后 执行tasks
+        connect: {
+            server: {
+                options: {
+                    //设置端口
+                    port: 9009,
+                    hostname:'localhost',
+                    livereload:true
+                }
+            }
+        },
     });
 
-    //告诉 grunt 当我们在终端输入 grunt 或 grunt default 时需要做些什么（注意先后顺序）
-    grunt.registerTask('default',['jshint','uglify']);
+    //监听事件
+    // grunt.event.on('watch', function(action,filepath) {
+    //     grunt.log.writeln('打印到终端');
+    // });
 
-    //grunt jshint 进行检查js
-    grunt.registerTask('jshint',['jshint']);
-
-    //grunt uglify 进行压缩js
-    grunt.registerTask('uglify',['uglify']);
-
-    //grunt concat 进行合并文件
-    grunt.registerTask('concat',['concat']);
+    //告诉 grunt 当我们在终端输入 grunt XXX 时需要做些什么（注意先后顺序）
+    grunt.registerTask('going',['jshint','jqlint','copy']);
 
     //配置 grunt 我们将使用插件
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-wiredep');
+    grunt.loadNpmTasks('grunt-contrib-concat');//合并js css
+    grunt.loadNpmTasks('grunt-contrib-uglify');//压缩js
+    grunt.loadNpmTasks('grunt-contrib-jshint');//js检查
+    grunt.loadNpmTasks('grunt-contrib-copy');//复制文件
+    grunt.loadNpmTasks('grunt-contrib-clean');//清理文件
+    grunt.loadNpmTasks('grunt-wiredep');//引入bower 依赖的js到html
+    grunt.loadNpmTasks('grunt-sails-linker');//引入js css到html
+    grunt.loadNpmTasks('grunt-jqlint');//jq检查
+    grunt.loadNpmTasks('grunt-contrib-watch');//监听服务
+    grunt.loadNpmTasks('grunt-contrib-connect');//创建服务 与 livereload 实现刷新
+    grunt.loadNpmTasks('grunt-newer');//监听变化的文件
 
 };

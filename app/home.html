@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grunt测试</title>
+    <link rel="stylesheet" type="text/css" href="fontIcon/fontIcon.css"></script>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="css/components/test.css"></script>
+    <!--CSS END-->
+    <!--SCRIPTS-->
+    <script type="text/javascript" src="js/components/jquery.min.js"></script>
+    <!--SCRIPTS END-->
+</head>
+<body>
+<i class="icon-camera-retro"></i> icon-camera-retro
+自动化测试<i class="iconfont">&#xe775</i>
+    <script type="text/javascript">
+    (function () {
+        console.log(1);
+        $.getJSON('json/test.json').done(function(data){
+            console.log(data);
+            document.write(data);
+        });
+    })()
+    </script>
+</body>
+</html>
