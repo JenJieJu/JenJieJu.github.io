@@ -133,18 +133,20 @@ ul.nav-list{
     padding: 0px 105px;
     max-width: 980px;
     margin: 0 auto;
+    text-align: center;
 }
 
 ul.nav-list li{
     display: inline-block;
-    margin-right: 100px;
+    margin:0px 50px;
     text-align:inherit;
     line-height: inherit;
 }
-/*logo*/
+/*用户*/
 a.login-box{
     width: 47px;
     height: 47px;
+    color: #000;
     line-height: 47px;
     position: fixed;
     top: 0px;
@@ -152,27 +154,6 @@ a.login-box{
     z-index: 9999;
     text-align: center;
 }
-a.login-box.open span.login-icon.user{
-    color: #000;
-    opacity: 1;
-}
-a.login-box.open span.login-icon.circle{
+a.login-box.open{
     color: #fff;
-    opacity: 1;
-}
-a.login-box span.login-icon{
-    position: absolute;
-}
-a.login-box span.login-icon.user{
-    z-index: 2;
-    color: #fff;
-    font-size: 14px;
-    left: 21.8px;
-}
-a.login-box span.login-icon.circle{
-    z-index: 1;
-    color: #000;
-    font-size: 22px;
-    left: 18px;
-    opacity: 0.8
 }
