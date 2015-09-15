@@ -142,6 +142,17 @@ ul.nav-list li{
     text-align:inherit;
     line-height: inherit;
 }
+ul.nav-list li a{
+    position: relative;
+}
+ul.nav-list li a.selced:before{
+    line-height: 47px;
+    font-size: 24px;
+    content:'·';
+    display: block;
+    position: absolute;
+    left: -20px;
+}
 /*用户*/
 a.login-box{
     width: 47px;
