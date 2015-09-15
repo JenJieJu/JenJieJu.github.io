@@ -12,7 +12,7 @@
     <!--SCRIPTS END-->
 </head>
 <body>
-<a class="app-nav" href="#">
+<a class="app-nav" href="javascript:void(0)">
     <span class="menu-icon-box ac-time b1">
         <span class="menu-icon l1 ac-time"></span>
     </span>
@@ -22,11 +22,17 @@
 </a>
     <script type="text/javascript">
     (function () {
-        console.log(1);
         $.getJSON('json/test.json').done(function(data){
             console.log(data);
-            document.write(data);
         });
+
+        $(".app-nav").click(function () {
+            if($(this).hasClass("open")){
+                $(this).removeClass("open");
+            }else{
+                $(this).addClass("open");
+            }
+        })
     })()
     </script>
 </body>

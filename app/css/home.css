@@ -54,28 +54,28 @@ a,a:active,a:visited,a:link{
     top: 26px;
 }
 
-.app-nav:hover .menu-icon-box.b1{
+.app-nav.open .menu-icon-box.b1{
     transform: rotate(135deg);
     -ms-transform: rotate(135deg);       /* IE 9 */
     -webkit-transform: rotate(135deg);   /* Safari and Chrome */
     -o-transform: rotate(135deg);        /* Opera */
     -moz-transform: rotate(135deg);      /* Firefox */
 }
-.app-nav:hover .menu-icon-box.b1 .menu-icon.l1{
+.app-nav.open .menu-icon-box.b1 .menu-icon.l1{
     transform: translate(0px,3px);
     -ms-transform: translate(0px,3px);       /* IE 9 */
     -webkit-transform: translate(0px,3px);   /* Safari and Chrome */
     -o-transform: translate(0px,3px);        /* Opera */
     -moz-transform: translate(0px,3px);      /* Firefox */
 }
-.app-nav:hover .menu-icon-box.b2{
+.app-nav.open .menu-icon-box.b2{
     transform: rotate(45deg);
     -ms-transform: rotate(45deg);       /* IE 9 */
     -webkit-transform: rotate(45deg);   /* Safari and Chrome */
     -o-transform: rotate(45deg);        /* Opera */
     -moz-transform: rotate(45deg);      /* Firefox */
 }
-.app-nav:hover .menu-icon-box.b2 .menu-icon.l2{
+.app-nav.open .menu-icon-box.b2 .menu-icon.l2{
     transform: translate(0px,-3px);
     -ms-transform: translate(0px,-3px);       /* IE 9 */
     -webkit-transform: translate(0px,-3px);   /* Safari and Chrome */
