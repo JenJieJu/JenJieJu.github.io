@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JuJenJie Movie</title>
+    <title>JuJenJie Phone</title>
     <link rel="stylesheet" type="text/css" href="font-awesome/font-awesome.min.css"></script>
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="css/home.css"></script>
@@ -12,13 +12,12 @@
     <!--SCRIPTS END-->
 </head>
 <body>
-<nav class="nav-box clearfix">
+<nav class="nav-box clearfix ac-time">
     <ul class="nav-list">
-        <li><a>12312</a></li>
-        <li><a>12312</a></li>
-        <li><a>12312</a></li>
-        <li><a>12312</a></li>
-        <li><a>12312</a></li>
+        <li><a>最新热门</a></li>
+        <li><a>安卓资讯</a></li>
+        <li><a>苹果资讯</a></li>
+        <li><a>WP资讯</a></li>
     </ul>
 </nav>
 <a class="menu" href="javascript:void(0)">
@@ -27,6 +26,14 @@
     </span>
     <span class="menu-icon-box ac-time b2">
         <span class="menu-icon l2 ac-time"></span>
+    </span>
+</a>
+<a class="login-box" href="javascript:void(0)">
+    <span class="login-icon user ac-time">
+        <i class="fa fa-user"></i>
+    </span>
+    <span class="login-icon circle ac-time">
+        <i class="fa fa-circle"></i>
     </span>
 </a>
 <div style="height:9000px; width:100%"></div>
@@ -38,9 +45,11 @@
 
         $('.menu').click(function () {
             if($(this).hasClass("open")){
+                $('a.login-box').removeClass("open");
                 $('nav.nav-box').removeClass("show");
                 $(this).removeClass("open");
             }else{
+                $('a.login-box').addClass("open");
                 $('nav.nav-box').addClass('show');
                 $(this).addClass("open");
             }
