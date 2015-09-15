@@ -6,7 +6,7 @@
 body,html{
     margin:0;
     padding: 0;
-    font-style: '微软雅黑',Microsoft YaHei,Tahoma,'黑体','宋体';
+    font-family: '微软雅黑',Microsoft YaHei,Tahoma,'黑体','宋体';
     color: #333;
 }
 ul,li{
@@ -129,7 +129,6 @@ nav.nav-box.show{
 ul.nav-list{
     font-size: 13px;
     line-height: 47px;
-    color: #fff;
     padding: 0px 105px;
     max-width: 980px;
     margin: 0 auto;
@@ -143,10 +142,18 @@ ul.nav-list li{
     line-height: inherit;
 }
 ul.nav-list li a{
+    color: #fff;
     position: relative;
+    opacity: 1;
+}
+ul.nav-list li a.selced{
+    opacity: 0.6;
+}
+ul.nav-list li a:hover{
+    opacity: 0.6;
 }
 ul.nav-list li a.selced:before{
-    line-height: 47px;
+    line-height: 52px;
     font-size: 24px;
     content:'·';
     display: block;
