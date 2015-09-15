@@ -29,7 +29,7 @@ module.exports = function (grunt) {
 
         //jqlint检查jq 插件的配置信息
         jqlint: {
-            build: [ 'app/js/**/*.js' ]
+            build: [ 'pc/js/**/*.js' ]
         },
 
         //concat 合并js css 插件配置信息
@@ -50,44 +50,44 @@ module.exports = function (grunt) {
                 expand: true,
                 cwd: 'bower_components/',
                 src: ['*/dest/*.min.js'],
-                dest: 'app/js/components/',
+                dest: 'pc/js/components/',
                 flatten: true,
             },
             css_components: {
                 expand: true,
                 cwd: 'bower_components/',
                 src: ['**/*.min.css'],
-                dest: 'app/css/components/',
+                dest: 'pc/css/components/',
                 flatten: true,
             },
             js: {
                 expand: true,
-                cwd: 'app/',
+                cwd: 'pc/',
                 src: ['js/**/*.js'],
                 dest: 'test/'
             },
             css: {
                 expand: true,
                 dot: true,
-                cwd: 'app/',
+                cwd: 'pc/',
                 src: ['css/**/*.css'],
                 dest: 'test/'
             },
             html: {
                 expand: true,
-                cwd: 'app/',
+                cwd: 'pc/',
                 src: ['**/*.html'],
                 dest: 'test/'
             },
             json: {
                 expand: true,
-                cwd: 'app/',
+                cwd: 'pc/',
                 src: ['**/*.json'],
                 dest: 'test/'
             },
             all:{
                 expand: true,
-                cwd: 'app/',
+                cwd: 'pc/',
                 src: ['**/*'],
                 dest: 'test/'
             }
@@ -104,7 +104,7 @@ module.exports = function (grunt) {
         wiredep: {
             app: {
                 src: [
-                    'app/index.html'
+                    'pc/index.html'
                 ],
                 ignorePath: /^(\.\.\/)*\.\./,
                 Options: {
@@ -120,10 +120,10 @@ module.exports = function (grunt) {
                     startTag: '<!--SCRIPTS-->',
                     endTag: '<!--SCRIPTS END-->',
                     fileTmpl: '<script type="text/javascript" src="%s"></script>',
-                    appRoot: 'app/'
+                    appRoot: 'pc/'
                 },
                 files: {
-                    'app/*.html': ['app/js/**/*.js']
+                    'pc/*.html': ['pc/js/**/*.js']
                 }
             },
             css: {
@@ -131,10 +131,10 @@ module.exports = function (grunt) {
                     startTag: '<!--CSS-->',
                     endTag: '<!--CSS END-->',
                     fileTmpl: '<link rel="stylesheet" type="text/css" href="%s"></script>',
-                    appRoot: 'app/'
+                    appRoot: 'pc/'
                 },
                 files: {
-                    'app/*.html': ['app/css/**/*.css']
+                    'pc/*.html': ['pc/css/**/*.css']
                 }
             } 
         },
@@ -142,28 +142,28 @@ module.exports = function (grunt) {
         //watch 监听文件改变保存后 执行tasks
         watch: {
             html: {
-                files: ['app/**/*.html'],
+                files: ['pc/**/*.html'],
                 //tasks: ['newer:copy:html'],
                 options:{
                     livereload:true
                 }
             },
             css: {
-                files: ['app/css/**/*.css'],
+                files: ['pc/css/**/*.css'],
                 tasks: ['newer:copy:css'],
                 options:{
                     livereload:true
                 }
             },
             js: {
-                files: ['app/js/**/*.js'],
+                files: ['pc/js/**/*.js'],
                 tasks: ['newer:copy:js'],
                 options:{
                     livereload:true
                 }
             },
             json: {
-                files: ['app/json/**/*.json'],
+                files: ['pc/json/**/*.json'],
                 tasks: ['newer:copy:json'],
                 options:{
                     livereload:true
