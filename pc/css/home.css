@@ -9,16 +9,23 @@ body,html{
     font-style: '微软雅黑',Microsoft YaHei,Tahoma,'黑体','宋体';
     color: #333;
 }
-a,a:active,a:visited,a:link{
-    color: #333;
+ul,li{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+a:link,a:visited{ text-decoration:none;}
+a:active,a:hover { text-decoration:none; }
+
+/*去浮动*/
+.clearfix:after{ 
+    content:'';
+    display:block;
+    clear:both;
+    visibility:hidden;
+    height:0;
 }
 
-/*导航*/
-.app-nav {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
 .ac-time{
     transition:all 0.5s ease 0s;
     -moz-transition:all 0.5s ease 0s; /* Firefox 4 */
@@ -27,8 +34,18 @@ a,a:active,a:visited,a:link{
     -ms-transition:all 0.5s ease 0s;
 }
 
+
+/*导航开关*/
+.menu {
+    display: inline-block;
+    width: 47px;
+    height: 47px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
 .menu-icon-box{
-    display: block;
+    display: inline-block;
     width: 47px;
     height: 47px;
     left: 0px;
@@ -47,6 +64,10 @@ a,a:active,a:visited,a:link{
     background: #000;
 }
 
+.menu.open .menu-icon-box .menu-icon{
+    background: #fff;
+}
+
 .menu-icon.l1{
     top: 20px;
 }
@@ -54,31 +75,67 @@ a,a:active,a:visited,a:link{
     top: 26px;
 }
 
-.app-nav.open .menu-icon-box.b1{
+.menu.open .menu-icon-box.b1{
     transform: rotate(135deg);
     -ms-transform: rotate(135deg);       /* IE 9 */
     -webkit-transform: rotate(135deg);   /* Safari and Chrome */
     -o-transform: rotate(135deg);        /* Opera */
     -moz-transform: rotate(135deg);      /* Firefox */
 }
-.app-nav.open .menu-icon-box.b1 .menu-icon.l1{
+.menu.open .menu-icon-box.b1 .menu-icon.l1{
     transform: translate(0px,3px);
     -ms-transform: translate(0px,3px);       /* IE 9 */
     -webkit-transform: translate(0px,3px);   /* Safari and Chrome */
     -o-transform: translate(0px,3px);        /* Opera */
     -moz-transform: translate(0px,3px);      /* Firefox */
 }
-.app-nav.open .menu-icon-box.b2{
+.menu.open .menu-icon-box.b2{
     transform: rotate(45deg);
     -ms-transform: rotate(45deg);       /* IE 9 */
     -webkit-transform: rotate(45deg);   /* Safari and Chrome */
     -o-transform: rotate(45deg);        /* Opera */
     -moz-transform: rotate(45deg);      /* Firefox */
 }
-.app-nav.open .menu-icon-box.b2 .menu-icon.l2{
+.menu.open .menu-icon-box.b2 .menu-icon.l2{
     transform: translate(0px,-3px);
     -ms-transform: translate(0px,-3px);       /* IE 9 */
     -webkit-transform: translate(0px,-3px);   /* Safari and Chrome */
     -o-transform: translate(0px,-3px);        /* Opera */
     -moz-transform: translate(0px,-3px);      /* Firefox */
+}
+
+/*导航*/
+nav.nav-box{
+    background: #000;
+    position: fixed;
+    height: 100%;
+    left: -160px;
+    top: 0px;
+    width: 160px;
+    padding: 100px 0px 0px 0px;
+
+    transition:all 0.5s ease 0s;
+    -moz-transition:all 0.5s ease 0s; /* Firefox 4 */
+    -webkit-transition:all 0.5s ease 0s; /* Safari and Chrome */
+    -o-transition:all 0.5s ease 0s; /* Opera */
+    -ms-transition:all 0.5s ease 0s;
+}
+
+nav.nav-box.show{
+    transform: translate(160px,0px);
+    -ms-transform: translate(160px,0px);       /* IE 9 */
+    -webkit-transform: translate(160px,0px);   /* Safari and Chrome */
+    -o-transform: translate(160px,0px);        /* Opera */
+    -moz-transform: translate(160px,0px);      /* Firefox */
+}
+
+ul.nav-list{
+    font-size: 14px;
+    line-height: 34px;
+    color: #fff;
+    opacity: 0.5;
+}
+
+ul.nav-list li{
+    padding-left: 35px;
 }

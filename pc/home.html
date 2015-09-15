@@ -12,7 +12,16 @@
     <!--SCRIPTS END-->
 </head>
 <body>
-<a class="app-nav" href="javascript:void(0)">
+<nav class="nav-box clearfix">
+    <ul class="nav-list">
+        <li><a>12312</a></li>
+        <li><a>12312</a></li>
+        <li><a>12312</a></li>
+        <li><a>12312</a></li>
+        <li><a>12312</a></li>
+    </ul>
+</nav>
+<a class="menu" href="javascript:void(0)">
     <span class="menu-icon-box ac-time b1">
         <span class="menu-icon l1 ac-time"></span>
     </span>
@@ -20,16 +29,19 @@
         <span class="menu-icon l2 ac-time"></span>
     </span>
 </a>
+<div style="height:9000px; width:100%"></div>
     <script type="text/javascript">
     (function () {
         $.getJSON('json/test.json').done(function(data){
             console.log(data);
         });
 
-        $(".app-nav").click(function () {
+        $('.menu').click(function () {
             if($(this).hasClass("open")){
+                $('nav.nav-box').removeClass("show");
                 $(this).removeClass("open");
             }else{
+                $('nav.nav-box').addClass('show');
                 $(this).addClass("open");
             }
         })

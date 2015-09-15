@@ -150,7 +150,7 @@ module.exports = function (grunt) {
             },
             css: {
                 files: ['pc/css/**/*.css'],
-                tasks: ['newer:copy:css'],
+                //tasks: ['newer:copy:css'],
                 options:{
                     livereload:true
                 }
