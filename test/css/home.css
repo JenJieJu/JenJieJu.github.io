@@ -74,7 +74,9 @@ a:active,a:hover { text-decoration:none; }
 .menu-icon.l2{
     top: 26px;
 }
-
+.menu:hover .menu-icon-box{
+    opacity: 0.6;
+}
 .menu.open .menu-icon-box.b1{
     transform: rotate(135deg);
     -ms-transform: rotate(135deg);       /* IE 9 */
@@ -171,6 +173,9 @@ a.login-box{
     right: 20px;
     z-index: 9999;
     text-align: center;
+}
+a.login-box:hover{
+    opacity: 0.6;
 }
 a.login-box.open{
     color: #fff;
