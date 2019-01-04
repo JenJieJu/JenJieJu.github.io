@@ -1,10 +1,7 @@
 <style lang="scss" scoped>
-.app {}
 </style>
 <template>
-    <div>
-        <router-view></router-view>
-    </div>
+    <router-view v-wechat-title="$route.meta.title||''" img-set="../favicon.ico"></router-view>
 </template>
 <script>
 export default {

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import home from './modules/home'
+import jStrongTable from './modules/jStrongTable'
 
 // 路由中心
 const routes = [{
@@ -9,13 +9,13 @@ const routes = [{
     component: {
         template: '<router-view></router-view>',
     },
-    redirect: '/home',
+    redirect: '/jStrongTable',
     children: [{
-            name: 'home',
-            path: 'home',
-            component: home,
+            name: 'jStrongTable',
+            path: 'jStrongTable',
+            component: jStrongTable,
             meta: {
-                title: '测试',
+                title: 'jStrongTable',
             }
         }
     ]
