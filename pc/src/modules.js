@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import jStrongTable from './modules/jStrongTable'
 import jTimePicker from './modules/jTimePicker'
+import home from './modules/home'
 
 // 路由中心
 const routes = [{
@@ -10,7 +11,7 @@ const routes = [{
     component: {
         template: '<router-view></router-view>',
     },
-    redirect: '/jStrongTable',
+    redirect: '/home',
     children: [{
         name: 'jStrongTable',
         path: 'jStrongTable',
@@ -24,6 +25,13 @@ const routes = [{
         component: jTimePicker,
         meta: {
             title: 'jTimePicker',
+        }
+    }, {
+        name: 'home',
+        path: 'home',
+        component: home,
+        meta: {
+            title: 'home',
         }
     }]
 }]
