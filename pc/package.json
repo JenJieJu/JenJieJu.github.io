@@ -48,6 +48,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "j-strong-table": "0.0.4",
+    "j-time-picker": "0.0.13",
     "vconsole": "^3.2.0",
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",
