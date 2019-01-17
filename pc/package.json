@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "j-simple-pagination": "0.0.1",
     "j-strong-table": "0.0.4",
     "j-time-picker": "0.0.15",
     "vconsole": "^3.2.0",

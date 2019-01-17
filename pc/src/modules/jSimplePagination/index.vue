@@ -1,0 +1,57 @@
+<style lang="scss" scoped>
+.home {}
+</style>
+<template>
+    <div>
+        <div id="time"></div>
+        <div id="log"></div>
+    </div>
+</template>
+<script>
+import jSimplePagination from 'j-simple-pagination'
+
+export default {
+    data() {
+        return {}
+    },
+    created() {
+
+        this.$nextTick(() => {
+            var log = document.getElementById('log');
+
+            var pageIndex = 7;
+            var pageSize = 10;
+            var pageTotal = 301;
+            var pageCount = 5;
+
+            var Pagination = new window.jSimplePagination('#time', {
+                pageSize: pageSize,
+                pageTotal: pageTotal,
+                pageIndex: pageIndex,
+                pageCount: pageCount,
+                onChange: function(data) {
+                    console.log(data);
+                    log.innerHTML = '<div>' + JSON.stringify(data) + '</div>';
+                }
+            });
+
+
+            log.innerHTML = '<div>' + JSON.stringify({
+                pageSize: pageSize,
+                pageTotal: pageTotal,
+                pageIndex: pageIndex,
+                pageCount: pageCount,
+            }) + '</div>'
+
+
+            console.log(Pagination)
+
+        })
+
+
+
+    },
+    mounted() {},
+    activated() {}
+}
+</script>

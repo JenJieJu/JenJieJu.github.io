@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import jStrongTable from './modules/jStrongTable'
 import jTimePicker from './modules/jTimePicker'
 import home from './modules/home'
+import jSimplePagination from './modules/jSimplePagination'
 
 // 路由中心
 const routes = [{
@@ -32,6 +33,13 @@ const routes = [{
         component: home,
         meta: {
             title: 'home',
+        }
+    }, {
+        name: 'jSimplePagination',
+        path: 'jSimplePagination',
+        component: jSimplePagination,
+        meta: {
+            title: 'jSimplePagination'
         }
     }]
 }]
