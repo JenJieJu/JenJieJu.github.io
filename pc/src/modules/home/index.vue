@@ -34,6 +34,12 @@
                 <router-link :to="{name:'jTimePicker'}">jTimePicker</router-link>
             </div>
         </div>
+        <div class="item">
+            <div class="title">简洁的翻页组件</div>
+            <div class="name">
+                <router-link :to="{name:'jSimplePagination'}">jSimplePagination</router-link>
+            </div>
+        </div>
     </div>
 </template>
 <script>
