@@ -1,8 +1,15 @@
 <style lang="scss" scoped>
-.home {}
+.home {
+    width: 600px;
+    margin: 100px auto;
+    #log{
+        margin-top: 50px;
+        text-align: center;
+    }
+}
 </style>
 <template>
-    <div>
+    <div class="home">
         <div id="time"></div>
         <div id="log"></div>
     </div>

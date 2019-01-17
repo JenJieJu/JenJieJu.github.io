@@ -1,0 +1,40 @@
+.home #table[data-v-1070fb11] {
+  width: 800px;
+}
+
+.home[data-v-207a6df7] {
+  text-align: center;
+}
+.home .box[data-v-207a6df7] {
+    line-height: 32px;
+    padding: 20px;
+}
+.home #time[data-v-207a6df7],
+  .home #time2[data-v-207a6df7] {
+    display: inline-block;
+}
+
+.home[data-v-5cc5f5c3] {
+  width: 300px;
+  margin: 0 auto;
+}
+.home .title[data-v-5cc5f5c3] {
+    color: #666;
+}
+.home .name[data-v-5cc5f5c3] {
+    font-size: 22px;
+}
+.home .item[data-v-5cc5f5c3] {
+    padding-bottom: 30px;
+}
+
+.home[data-v-5c11e5b0] {
+  width: 600px;
+  margin: 100px auto;
+}
+.home #log[data-v-5c11e5b0] {
+    margin-top: 50px;
+    text-align: center;
+}
+
+
