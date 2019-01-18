@@ -1,23 +1,61 @@
 <style lang="scss" scoped>
-.home {
+.box {
+    width: 800px;
+    margin: 0 auto;
+
     #table {
-        width: 800px;
+        width: 100%;
+    }
+
+    #pagination {
+        margin: 20px 0;
     }
 }
 </style>
 <template>
-    <div class="home">
+    <div class="box">
         <div id="table"></div>
+        <div id="pagination"></div>
     </div>
 </template>
 <script>
 import data from './data.js'
 import jStrongTable from 'j-strong-table'
+import jSimplePagination from 'j-simple-pagination'
 
 export default {
     data() {
         return {
-            data
+            data: (() => {
+                let array = [];
+                for (var i = 0; i < 2; i++) {
+                    let ary = [].concat(data);
+                    ary.sort(function() {
+                        return Math.random() > .5 ? -1 : 1;
+                    })
+                    array = array.concat(ary);
+                }
+                return array
+            })(),
+            pageSize: 6,
+            pageIndex: 1,
+            showCount: 4,
+        }
+    },
+    computed: {
+        pageDatas() {
+            let result = []
+            for (var i = 0, length = this.data.length; i < length; i += this.pageSize) {
+                result.push(this.data.slice(i, i + this.pageSize));
+            }
+            return result;
+        }
+    },
+    methods: {
+        changePage(i) {
+            var datas = this.pageDatas[i - 1];
+            this.table.setData(datas);
+            this.table.render();
         }
     },
     created() {
@@ -25,10 +63,20 @@ export default {
 
     },
     mounted() {
-        var table = new window.jTable('#table').setConfig({
-            height: 500
-        });
-        table.setTitle([{
+        this.table = new window.jTable('#table').setConfig({
+            // height: 500
+        }).setTitle([{
+            // type: 'selection',
+            width: 60,
+            fixed: true,
+            render: function(data) {
+                if (data.headPicFileName) {
+                    return [{
+                        html: '<div style="text-align:center;"><img src="' + data.headPicFileName + '" alt="" width="30" height="30" /></div>'
+                    }]
+                }
+            }
+        }, {
             label: '姓名',
             key: 'name',
             width: 100,
@@ -37,7 +85,6 @@ export default {
             label: '嵌套key.key',
             key: 'key.key',
             width: 100,
-            fixed: true
         }, {
             label: '医生 ID',
             key: 'userId',
@@ -121,12 +168,17 @@ export default {
             fixed: 'right'
         }]);
 
-        table.setData(data);
+        this.Pagination = new window.jSimplePagination('#pagination', {
+            pageSize: this.pageSize,
+            dataTotal: this.data.length,
+            pageIndex: this.pageIndex,
+            showCount: this.showCount,
+            onChange: (data) => {
+                this.changePage(data.pageIndex);
+            }
+        });
 
-
-        table.render();
-
-        console.log(table)
+        this.changePage(this.pageIndex);
     },
     activated() {}
 }
