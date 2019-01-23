@@ -1,4 +1,5 @@
 <style lang="scss" scoped>
+
 </style>
 <template>
     <router-view v-wechat-title="$route.meta.title||''" img-set="../favicon.ico"></router-view>

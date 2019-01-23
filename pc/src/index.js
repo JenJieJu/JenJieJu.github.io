@@ -6,6 +6,7 @@ import { router, store } from './modules.js'
 import vueWechatTitle from 'vue-wechat-title'
 
 import App from './App'
+import './css.scss'
 
 
 Vue.config.productionTip = false
