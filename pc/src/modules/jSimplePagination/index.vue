@@ -2,7 +2,8 @@
 .home {
     width: 600px;
     margin: 100px auto;
-    #log{
+
+    #log {
         margin-top: 50px;
         text-align: center;
     }
@@ -28,14 +29,14 @@ export default {
 
             var pageIndex = 7;
             var pageSize = 10;
-            var pageTotal = 301;
-            var pageCount = 5;
+            var dataTotal = 601;
+            var showCount = 5;
 
             var Pagination = new window.jSimplePagination('#time', {
                 pageSize: pageSize,
-                pageTotal: pageTotal,
+                dataTotal: dataTotal,
                 pageIndex: pageIndex,
-                pageCount: pageCount,
+                showCount: showCount,
                 onChange: function(data) {
                     console.log(data);
                     log.innerHTML = '<div>' + JSON.stringify(data) + '</div>';
@@ -45,9 +46,9 @@ export default {
 
             log.innerHTML = '<div>' + JSON.stringify({
                 pageSize: pageSize,
-                pageTotal: pageTotal,
+                dataTotal: dataTotal,
                 pageIndex: pageIndex,
-                pageCount: pageCount,
+                showCount: showCount,
             }) + '</div>'
 
 
