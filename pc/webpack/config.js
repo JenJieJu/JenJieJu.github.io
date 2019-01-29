@@ -1,1 +1,0 @@
-module.exports = require(process.env.ROOT_PATH + '/config.js');

@@ -1,6 +1,5 @@
 <style lang="scss" scoped>
 .home {
-    // text-align: center;
     width: 300px;
     margin: 0 auto;
 
@@ -16,10 +15,16 @@
         padding-bottom: 30px;
     }
 
+    .logo{
+        background-image: url('img/logo@2x.png')
+    }
+
 }
 </style>
 <template>
     <div class="home">
+        <!-- <img src="./img/logo@2x.png" alt="">
+        <div class="logo"></div> -->
         <h1>demo</h1>
         <h4 class="title">原生js(不依赖任何框架)</h4>
         <div class="item">

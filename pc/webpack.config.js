@@ -1,3 +1,3 @@
 const path = require('path');
 
-module.exports = require('./webpack')(path.resolve(__dirname, './'));
+module.exports = require('j-webpack')(path.resolve(__dirname, './'));

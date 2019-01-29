@@ -34,6 +34,9 @@
 .home .item[data-v-5cc5f5c3] {
     padding-bottom: 30px;
 }
+.home .logo[data-v-5cc5f5c3] {
+    background-image: url(./../img/logo@2x-4322b.png);
+}
 
 .home[data-v-5c11e5b0] {
   width: 600px;
@@ -43,7 +46,6 @@
     margin-top: 50px;
     text-align: center;
 }
-
 
 body,
 html {

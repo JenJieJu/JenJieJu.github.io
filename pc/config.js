@@ -1,15 +1,6 @@
 module.exports = {
-    data: {
-        "key": "",
-        "name": "medicalRecords",
-        "b_v": 0,
-        "m_v": 0.0,
-        "url": "",
-        "hash": "",
-        "size": 0
-    },
+    // component: true,
     framework: 'vue',
-    offline: false,
     devServer: {
         // contentBase: path.resolve(''),
         // publicPath: './',

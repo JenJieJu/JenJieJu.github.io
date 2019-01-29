@@ -8,6 +8,7 @@ import vueWechatTitle from 'vue-wechat-title'
 import App from './App'
 import './css.scss'
 
+import './ts.ts'
 
 Vue.config.productionTip = false
 
@@ -16,7 +17,8 @@ Vue.use(vueWechatTitle)
 window.App = new Vue({
     el: '#app',
     router,
-    store,
+    // store,
     components: { App },
     template: '<App/>'
 })
+
