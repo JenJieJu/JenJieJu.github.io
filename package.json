@@ -1,0 +1,24 @@
+{
+  "name": "jenjieju.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "watch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./watch.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JenJieJu/JenJieJu.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JenJieJu/JenJieJu.github.io/issues"
+  },
+  "homepage": "https://github.com/JenJieJu/JenJieJu.github.io#readme",
+  "devDependencies": {
+    "node-watch": "^0.7.1",
+    "shelljs": "^0.8.4"
+  }
+}
