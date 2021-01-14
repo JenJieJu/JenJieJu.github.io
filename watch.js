@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-13 17:32:53
- * @LastEditTime: 2021-01-14 12:55:46
+ * @LastEditTime: 2021-01-14 13:00:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /desktop-tutorial/watch.js
@@ -22,6 +22,7 @@ watch(
       // skip .git folder
 			if (/\.git/.test(f)) return skip;
 			if (/\.history/.test(f)) return skip;
+			if (/\book/.test(f)) return skip;
       // only watch for js files
       return true
     },
