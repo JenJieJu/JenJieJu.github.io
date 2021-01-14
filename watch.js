@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-13 17:32:53
- * @LastEditTime: 2021-01-14 14:44:41
+ * @LastEditTime: 2021-01-14 14:47:04
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /desktop-tutorial/watch.js
@@ -28,7 +28,9 @@ watch(
   },
   function (evt, name) {
     console.log("%s changed.", name);
-    shell.exec("./build.sh");
+    if (name.indexOf("md/") > -1) {
+      shell.exec("./build.sh");
+    }
     shell.exec("./push.sh");
   }
 );
