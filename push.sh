@@ -1,14 +1,14 @@
 ###
 # @Author: your name
 # @Date: 2021-01-13 16:58:29
- # @LastEditTime: 2021-01-13 19:46:24
+ # @LastEditTime: 2021-01-14 14:47:48
  # @LastEditors: Please set LastEditors
 # @Description: In User Settings Edit
 # @FilePath: /desktop-tutorial/push.sh
 ###
 dates=`date "+%Y-%m-%d"` #日期
 times=`date "+%H:%M:%S"` #时间
-blaches=`master`
+blaches="master"
 
 isGit=$(ls -a | grep -x .git | wc -l) #判断是否有仓库
 if [ $isGit -gt 0 ]; then
