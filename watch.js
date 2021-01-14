@@ -28,7 +28,7 @@ watch(
   },
   function (evt, name) {
 		console.log("%s changed.", name);
-		
+		shell.exec('./build.sh')
 		shell.exec('./push.sh')
 		
   }
