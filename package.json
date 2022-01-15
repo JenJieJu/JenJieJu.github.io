@@ -19,6 +19,6 @@
   "homepage": "https://github.com/JenJieJu/JenJieJu.github.io#readme",
   "devDependencies": {
     "node-watch": "^0.7.1",
-    "shelljs": "^0.8.4"
+    "shelljs": "^0.8.5"
   }
 }
